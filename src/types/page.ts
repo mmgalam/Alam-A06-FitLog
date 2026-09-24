@@ -13,3 +13,13 @@ export interface Workout {
   description: string;
   instructions: string[];
 }
+
+export interface WorkoutCardProps {
+  workout: Workout;
+}
+
+export interface WorkoutDetailsPageProps {
+  params: Promise<{
+    id: string;
+  }>;
+}

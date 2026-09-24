@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar/page";
 
 const inter = Inter({
+  subsets: ["latin"],
+});
+
+export const oswald = Oswald({
   subsets: ["latin"],
 });
 
