@@ -4,7 +4,11 @@ import { Workout } from "@/types/page";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { FaRegStar } from "react-icons/fa";
+import { GiCheckMark } from "react-icons/gi";
 import { ImCross } from "react-icons/im";
+import { MdOutlineWatchLater } from "react-icons/md";
+import { PiFireSimpleFill } from "react-icons/pi";
 
 type Tab = "plan" | "saved";
 type SortType = "duration" | "calories" | "rating";
@@ -103,7 +107,7 @@ const MyPlan = () => {
   /* ================= MARK AS DONE ================= */
 
   const markAsDone = (workout: Workout) => {
-    showToast(`${workout.name} marked as done ✓`);
+    showToast(`${workout.name} marked as done`);
   };
 
   /* ================= CURRENT DATA ================= */
@@ -143,7 +147,6 @@ const MyPlan = () => {
   return (
     <main className="bg-[#0D0F12] px-4 py-8 text-white sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
-
         {/* ================= HEADER ================= */}
 
         <div className="mb-6">
@@ -159,7 +162,6 @@ const MyPlan = () => {
         {/* ================= METRICS ================= */}
 
         <div className="mb-6 grid grid-cols-3 overflow-hidden rounded-xl border border-[#242830] bg-[#15181E]">
-
           {/* Exercises */}
           <div className="border-r border-[#242830] p-4 sm:p-5">
             <p className="text-[9px] uppercase text-gray-500 sm:text-xs">
@@ -197,7 +199,6 @@ const MyPlan = () => {
         {/* ================= TABS + SORT ================= */}
 
         <div className="mb-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-
           {/* Tabs */}
           <div className="flex w-fit rounded-md border border-[#242830] bg-[#15181E] p-1">
             <button
@@ -250,7 +251,6 @@ const MyPlan = () => {
             </div>
           </div>
         ) : sortedWorkouts.length === 0 ? (
-
           /* ================= EMPTY STATE ================= */
 
           <div className="flex min-h-75 flex-col items-center justify-center rounded-xl border border-dashed border-[#30343C] bg-[#111419] px-5 text-center">
@@ -270,7 +270,6 @@ const MyPlan = () => {
             </Link>
           </div>
         ) : (
-
           /* ================= WORKOUT LIST ================= */
 
           <div className="space-y-3">
@@ -300,11 +299,17 @@ const MyPlan = () => {
                   </p>
 
                   <div className="mt-2 flex flex-wrap gap-3 text-[10px] text-gray-400">
-                    <span>◷ {workout.duration} min</span>
+                    <span className="flex items-center gap-1.5">
+                      <MdOutlineWatchLater /> {workout.duration} min
+                    </span>
 
-                    <span>♥ {workout.caloriesBurned} kcal</span>
+                    <span className="flex items-center gap-1.5">
+                      <PiFireSimpleFill /> {workout.caloriesBurned} kcal
+                    </span>
 
-                    <span>☆ {workout.rating}</span>
+                    <span className="flex items-center gap-1.5">
+                      <FaRegStar /> {workout.rating}
+                    </span>
                   </div>
                 </div>
 
@@ -324,7 +329,7 @@ const MyPlan = () => {
                       onClick={() => markAsDone(workout)}
                       className="rounded-full bg-[#C2F800] px-3 py-1.5 text-[10px] font-bold text-black transition hover:bg-[#b5eb00]"
                     >
-                      ✓ Mark as Done
+                      <GiCheckMark /> Mark as Done
                     </button>
                   )}
 
