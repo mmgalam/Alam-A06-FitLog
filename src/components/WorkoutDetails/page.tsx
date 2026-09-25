@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { CiBookmark } from "react-icons/ci";
+import { IoIosArrowRoundBack } from "react-icons/io";
 import { LuCalendarPlus2 } from "react-icons/lu";
 
 interface WorkoutDetailsProps {
@@ -76,17 +77,14 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
   return (
     <main className="min-h-screen bg-[#0D0F12] text-white">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        {/* Back */}
         <Link
           href="/"
           className="mb-6 inline-block text-xs text-gray-500 transition hover:text-[#C2F800]"
         >
-          ← Back to workouts
+          <IoIosArrowRoundBack /> Back to workouts
         </Link>
 
-        {/* Main */}
         <div className="grid gap-7 lg:grid-cols-2">
-          {/* Image */}
           <div className="relative h-100 overflow-hidden rounded-xl sm:h-125 lg:h-150">
             <Image
               src={workout.image}
@@ -97,7 +95,6 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
             />
           </div>
 
-          {/* Content */}
           <div>
             <h1 className="text-3xl font-extrabold uppercase sm:text-4xl">
               {workout.name}
@@ -107,7 +104,7 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
               {workout.description}
             </p>
 
-            {/* Badges */}
+            {/* Badge */}
             <div className="mt-3 flex flex-wrap gap-2">
               {workout.muscleGroups.map((muscle) => (
                 <span
@@ -119,7 +116,7 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
               ))}
             </div>
 
-            {/* Specs */}
+            {/* Spece */}
             <div className="mt-5 overflow-hidden rounded-xl border border-[#242830] bg-[#15181E]">
               <div className="flex justify-between border-b border-[#242830] px-4 py-3 text-xs">
                 <span className="uppercase text-gray-500">Equipment</span>
@@ -193,7 +190,7 @@ const WorkoutDetails = ({ workout }: WorkoutDetailsProps) => {
 
       {/* Toast */}
       {toast && (
-        <div className="fixed bottom-5 left-1/2 z-99 -translate-x-1/2 rounded-lg bg-[#7e8078] px-5 py-3 text-xs font-bold text-white shadow-2xl">
+        <div className="fixed bottom-5 left-1/2 z-50 -translate-x-1/2 rounded-lg bg-[#C2F800] px-5 py-3 text-xs font-bold text-black shadow-2xl">
           {toast}
         </div>
       )}

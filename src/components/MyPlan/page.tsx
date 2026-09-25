@@ -313,8 +313,9 @@ const MyPlan = () => {
                   </div>
                 </div>
 
-                {/* Actions */}
+                
                 <div className="mt-4 flex shrink-0 items-center gap-2 sm:mt-0">
+                
                   {/* View Details */}
                   <Link
                     href={`/workouts/${workout.id}`}
@@ -327,7 +328,7 @@ const MyPlan = () => {
                   {activeTab === "plan" && (
                     <button
                       onClick={() => markAsDone(workout)}
-                      className="rounded-full bg-[#C2F800] px-3 py-1.5 text-[10px] font-bold text-black transition hover:bg-[#b5eb00]"
+                      className="flex items-center gap-1.5 rounded-full bg-[#C2F800] px-3 py-1.5 text-[10px] font-bold text-black transition hover:bg-[#b5eb00]"
                     >
                       <GiCheckMark /> Mark as Done
                     </button>

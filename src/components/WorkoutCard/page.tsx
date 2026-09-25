@@ -43,7 +43,7 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
           {/* Equipment */}
           <p className="mt-2 text-base text-gray-400">{workout.equipment}</p>
 
-          {/* Divider */}
+          
           <div className="my-5 border-t border-gray-700" />
 
           {/* Bottom Info */}
