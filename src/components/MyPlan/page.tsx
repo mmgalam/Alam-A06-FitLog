@@ -141,7 +141,7 @@ const MyPlan = () => {
   );
 
   return (
-    <main className="min-h-screen bg-[#0D0F12] px-4 py-8 text-white sm:px-6 lg:px-8">
+    <main className="bg-[#0D0F12] px-4 py-8 text-white sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
 
         {/* ================= HEADER ================= */}
@@ -270,7 +270,7 @@ const MyPlan = () => {
             </Link>
           </div>
         ) : (
-          
+
           /* ================= WORKOUT LIST ================= */
 
           <div className="space-y-3">

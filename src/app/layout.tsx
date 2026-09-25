@@ -19,20 +19,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${inter.className} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-
+    <html lang="en" className={`${inter.className} h-full antialiased`}>
+      <body className="flex min-h-full flex-col bg-[#0D0F12]">
         <Navbar />
 
-        <div>
-          {children}
-        </div>
+        <div className="flex-1">{children}</div>
 
         <Footer />
-
       </body>
     </html>
   );
