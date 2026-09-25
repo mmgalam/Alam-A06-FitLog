@@ -1,5 +1,4 @@
 import Banner from "@/components/Banner/page";
-import Footer from "@/components/Footer/page";
 import WorkoutGrid from "@/components/WorkoutGrid/page";
 
 
@@ -10,7 +9,6 @@ const HomePage = () => {
 
       <WorkoutGrid />
 
-      <Footer />
     </main>
   );
 };

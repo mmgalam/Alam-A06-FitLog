@@ -12,23 +12,33 @@ const Navbar = () => {
   const [planCount, setPlanCount] = useState(0);
   const [savedCount, setSavedCount] = useState(0);
 
-  const updateCounts = () => {
-    const plan = JSON.parse(localStorage.getItem("todayPlan") || "[]");
-    const saved = JSON.parse(localStorage.getItem("savedWorkouts") || "[]");
-
-    setPlanCount(plan.length);
-    setSavedCount(saved.length);
-  };
-
   useEffect(() => {
+    const updateCounts = () => {
+      try {
+        const plan = JSON.parse(localStorage.getItem("todayPlan") || "[]");
+
+        const saved = JSON.parse(localStorage.getItem("savedWorkouts") || "[]");
+
+        setPlanCount(Array.isArray(plan) ? plan.length : 0);
+        setSavedCount(Array.isArray(saved) ? saved.length : 0);
+      } catch {
+        setPlanCount(0);
+        setSavedCount(0);
+      }
+    };
+
     updateCounts();
 
+    const handleFitLogUpdate = () => {
+      updateCounts();
+    };
+
     window.addEventListener("storage", updateCounts);
-    window.addEventListener("fitlog-storage-update", updateCounts);
+    window.addEventListener("fitlog-storage-update", handleFitLogUpdate);
 
     return () => {
       window.removeEventListener("storage", updateCounts);
-      window.removeEventListener("fitlog-storage-update", updateCounts);
+      window.removeEventListener("fitlog-storage-update", handleFitLogUpdate);
     };
   }, []);
 

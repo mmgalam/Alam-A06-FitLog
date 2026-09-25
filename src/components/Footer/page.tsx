@@ -6,7 +6,7 @@ import { FaRegCopyright } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className="bg-[#090A0D] mt-10">
+    <div className="">
       <div className="container mx-auto py-10 flex justify-between">
         <Link href="/" className="flex gap-2">
           <Image src={FooterLogo} alt="Footer Logo" />

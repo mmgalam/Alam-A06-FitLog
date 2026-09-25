@@ -13,7 +13,7 @@ const WorkoutGrid = async () => {
   const workoutLibrariesData = await workoutLibraries();
 
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto py-5 pb-15">
       <div className="pb-6">
         <h2 className={`${oswald.className} font-bold text-2xl`}>
           THE LIBRARY
