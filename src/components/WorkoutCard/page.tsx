@@ -1,6 +1,9 @@
 import { WorkoutCardProps } from "@/types/page";
 import Image from "next/image";
 import Link from "next/link";
+import { FaRegStar } from "react-icons/fa";
+import { MdOutlineWatchLater } from "react-icons/md";
+import { PiFireSimpleFill } from "react-icons/pi";
 
 
 
@@ -45,11 +48,11 @@ const WorkoutCard = ({ workout }: WorkoutCardProps) => {
 
           {/* Bottom Info */}
           <div className="flex items-center justify-between text-sm text-gray-300">
-            <span>◷ {workout.duration} min</span>
+            <span className="flex items-center gap-1.5"><MdOutlineWatchLater /> {workout.duration} min</span>
 
-            <span>♥ {workout.caloriesBurned} kcal</span>
+            <span className="flex items-center gap-1.5"><PiFireSimpleFill /> {workout.caloriesBurned} kcal</span>
 
-            <span>☆ {workout.rating}</span>
+            <span className="flex items-center gap-1.5"><FaRegStar /> {workout.rating}</span>
           </div>
         </div>
       </div>

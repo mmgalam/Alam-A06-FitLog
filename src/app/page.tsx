@@ -1,11 +1,18 @@
-import Banner from "../components/Banner/page";
-import WorkoutGrid from "../components/WorkoutGrid/page";
+import Banner from "@/components/Banner/page";
+import Footer from "@/components/Footer/page";
+import WorkoutGrid from "@/components/WorkoutGrid/page";
 
-export default function Home() {
+
+const HomePage = () => {
   return (
-    <div>
+    <main className="min-h-screen bg-[#0D0F12]">
       <Banner />
+
       <WorkoutGrid />
-    </div>
+
+      <Footer />
+    </main>
   );
-}
+};
+
+export default HomePage;
